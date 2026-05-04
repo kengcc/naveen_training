@@ -1,0 +1,9 @@
+{
+  "name": "tm-rd-holiday-planner-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "echo \"Angular app scaffold created. Run Angular CLI setup next.\"",
+    "build": "echo \"Build pipeline not wired yet.\""
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "tm-rd-holiday-planner",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev:backend": "npm run dev --workspace backend",
+    "start:backend": "npm run start --workspace backend",
+    "dev:frontend": "npm run start --workspace frontend",
+    "build:frontend": "npm run build --workspace frontend"
+  }
+}
