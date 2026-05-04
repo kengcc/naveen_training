@@ -1,0 +1,41 @@
+<section class="page-stack">
+  <app-section-header
+    eyebrow="Requests"
+    title="Holiday requests"
+    description="Submit a new request and review your current pipeline."
+  ></app-section-header>
+
+  <div class="split-grid">
+    <form class="panel form-grid" (ngSubmit)="submitRequest()">
+      <h3>Create request</h3>
+
+      <label>
+        <span>Start date</span>
+        <input [(ngModel)]="form.startDate" name="startDate" type="date" />
+      </label>
+
+      <label>
+        <span>End date</span>
+        <input [(ngModel)]="form.endDate" name="endDate" type="date" />
+      </label>
+
+      <label>
+        <span>Reason</span>
+        <textarea [(ngModel)]="form.reason" name="reason" rows="4"></textarea>
+      </label>
+
+      <button type="submit">Send for approval</button>
+    </form>
+
+    <article class="panel">
+      <h3>My requests</h3>
+      <div class="row" *ngFor="let request of requests$ | async">
+        <div>
+          <strong>{{ request.startDate }} - {{ request.endDate }}</strong>
+          <p>{{ request.reason }}</p>
+        </div>
+        <app-status-pill [status]="request.status"></app-status-pill>
+      </div>
+    </article>
+  </div>
+</section>

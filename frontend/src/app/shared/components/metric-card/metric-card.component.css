@@ -1,0 +1,27 @@
+.card {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: var(--shadow);
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.card strong {
+  font-size: 2rem;
+}
+
+.card small {
+  color: var(--muted);
+}
+
+.card[data-tone='warm'] {
+  background: linear-gradient(180deg, rgba(217, 130, 43, 0.12), rgba(255, 255, 255, 0.8));
+}

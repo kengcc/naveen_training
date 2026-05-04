@@ -1,0 +1,23 @@
+.header {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.25rem 0.15rem;
+}
+
+.header p {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.header h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+}
+
+.header span {
+  color: var(--muted);
+  max-width: 70ch;
+}

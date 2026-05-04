@@ -1,0 +1,33 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96px;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.pill[data-status='approved'] {
+  background: rgba(18, 92, 94, 0.12);
+  color: var(--brand-strong);
+}
+
+.pill[data-status='pending'] {
+  background: rgba(217, 130, 43, 0.12);
+  color: #8a4d13;
+}
+
+.pill[data-status='rejected'],
+.pill[data-status='cancelled'] {
+  background: rgba(180, 35, 24, 0.12);
+  color: #8c1b14;
+}
+
+.pill[data-status='draft'] {
+  background: rgba(85, 99, 114, 0.12);
+  color: var(--muted);
+}

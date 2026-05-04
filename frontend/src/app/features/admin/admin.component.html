@@ -1,0 +1,31 @@
+<section class="page-stack">
+  <app-section-header
+    eyebrow="Admin"
+    title="Reporting and audit"
+    description="Track important changes and review system activity."
+  ></app-section-header>
+
+  <div class="split-grid">
+    <article class="panel">
+      <h3>Audit trail</h3>
+      <div class="row" *ngFor="let item of auditLogs$ | async">
+        <div>
+          <strong>{{ item.action }}</strong>
+          <p>{{ item.entityType }} / {{ item.entityId }}</p>
+        </div>
+        <span class="meta">{{ item.createdAt | date: 'mediumDate' }}</span>
+      </div>
+    </article>
+
+    <article class="panel">
+      <h3>Notifications</h3>
+      <div class="row" *ngFor="let item of notifications$ | async">
+        <div>
+          <strong>{{ item.title }}</strong>
+          <p>{{ item.message }}</p>
+        </div>
+        <span class="meta">{{ item.createdAt | date: 'mediumDate' }}</span>
+      </div>
+    </article>
+  </div>
+</section>

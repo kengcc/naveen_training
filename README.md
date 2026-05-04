@@ -39,10 +39,12 @@ The backend is organized around:
 - Route shells for auth, holidays, and admin functions
 
 ## Frontend Scaffold
-The frontend includes placeholders for:
-- App shell
+The frontend now includes:
+- Angular workspace configuration
+- App shell and router-driven layout
 - Core models and services
 - Feature areas for login, dashboard, requests, calendar, and admin reporting
+- Shared presentation components for metrics, statuses, and section headers
 
 ## Suggested Next Step
 Install dependencies and implement the first vertical slice:
@@ -51,5 +53,5 @@ Install dependencies and implement the first vertical slice:
 3. Manager approval
 
 ## Notes
-- The current frontend is a scaffold, not a fully generated Angular CLI project yet.
+- The frontend is scaffolded in Angular style, but dependencies still need to be installed before it can run locally.
 - The backend model layer is ready for feature implementation but does not yet include business logic.

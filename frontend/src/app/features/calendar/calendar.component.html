@@ -1,0 +1,27 @@
+<section class="page-stack">
+  <app-section-header
+    eyebrow="Calendar"
+    title="Team availability"
+    description="See planned absences and overlapping leave windows."
+  ></app-section-header>
+
+  <article class="panel">
+    <div class="week-grid">
+      <div class="day-card" *ngFor="let day of ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']">
+        <p>{{ day }}</p>
+        <strong>Availability</strong>
+      </div>
+    </div>
+  </article>
+
+  <article class="panel">
+    <h3>Platform team absences</h3>
+    <div class="row" *ngFor="let request of platformAbsences$ | async">
+      <div>
+        <strong>{{ request.userName }}</strong>
+        <p>{{ request.startDate }} - {{ request.endDate }}</p>
+      </div>
+      <app-status-pill [status]="request.status"></app-status-pill>
+    </div>
+  </article>
+</section>

@@ -1,0 +1,39 @@
+<section class="page-stack">
+  <app-section-header
+    eyebrow="Overview"
+    title="Your holiday command center"
+    description="A concise view of approvals, balances, and team availability."
+  ></app-section-header>
+
+  <div class="metric-grid" *ngIf="summary$ | async as summary">
+    <app-metric-card title="Remaining days" [value]="summary.remainingLeaveDays" caption="Current year balance"></app-metric-card>
+    <app-metric-card title="Pending requests" [value]="summary.pendingRequests" caption="Awaiting action"></app-metric-card>
+    <app-metric-card title="Approved requests" [value]="summary.approvedRequests" caption="This year"></app-metric-card>
+    <app-metric-card title="Team absences" [value]="summary.teamAbsences" caption="Platform team" tone="warm"></app-metric-card>
+  </div>
+
+  <div class="split-grid">
+    <article class="panel">
+      <h3>Upcoming leave</h3>
+      <ng-container *ngIf="upcomingRequests$ | async as requests">
+        <div class="row" *ngFor="let request of requests">
+          <div>
+            <strong>{{ request.startDate }} - {{ request.endDate }}</strong>
+            <p>{{ request.reason }}</p>
+          </div>
+          <app-status-pill [status]="request.status"></app-status-pill>
+        </div>
+      </ng-container>
+    </article>
+
+    <article class="panel">
+      <h3>Team availability</h3>
+      <ng-container *ngIf="teamRequests$ | async as teamRequests">
+        <div class="timeline" *ngFor="let request of teamRequests">
+          <p>{{ request.userName }}</p>
+          <strong>{{ request.startDate }} - {{ request.endDate }}</strong>
+        </div>
+      </ng-container>
+    </article>
+  </div>
+</section>
