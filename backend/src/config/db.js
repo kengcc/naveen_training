@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 export async function connectDb(uri) {
   if (!uri) {
-    throw new Error('MONGODB_URI is required');
+    return null;
   }
 
   mongoose.set('strictQuery', true);

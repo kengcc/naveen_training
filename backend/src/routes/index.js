@@ -3,10 +3,14 @@ import authRoutes from './auth.routes.js';
 import holidayRoutes from './holiday.routes.js';
 import adminRoutes from './admin.routes.js';
 
-const router = Router();
+export function createApiRouter(deps = {}) {
+  const router = Router();
 
-router.use('/auth', authRoutes);
-router.use('/holidays', holidayRoutes);
-router.use('/admin', adminRoutes);
+  router.use('/auth', authRoutes(deps));
+  router.use('/holidays', holidayRoutes(deps));
+  router.use('/admin', adminRoutes(deps));
 
-export default router;
+  return router;
+}
+
+export default createApiRouter;
